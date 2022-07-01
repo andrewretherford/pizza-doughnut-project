@@ -1,19 +1,19 @@
-const url = 'https://data.cityofnewyork.us/resource/erm2-nwe9.json?agency=NYPD'
-const appToken = 'd3kmc36b8ra99y02cgvf4tzby'
-
-fetch(url
-    // headers: {
-    //     'X-App-Token': 'd3kmc36b8ra99y02cgvf4tzby'
-    // }
-)
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
+// fetch(url
+//     // headers: {
+//     //     'X-App-Token': 'd3kmc36b8ra99y02cgvf4tzby'
+//     // }
+// )
+//     .then(res => res.json())
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err))
 
     // constants
-    let complaints
 
+    const url = 'https://data.cityofnewyork.us/resource/erm2-nwe9.json?agency=NYPD'
+    const appToken = 'd3kmc36b8ra99y02cgvf4tzby'
+    
     // global variables
+    let complaints
     let borough
 
     // DOM elements
@@ -31,6 +31,7 @@ fetch(url
     }
 
     // event handlers
+
     function clickHandler(e) {
 
         // clear previous child elements
@@ -54,6 +55,7 @@ fetch(url
 
         let complaintArray = []
         let sortedComplaints
+
         // populate complaints array with objects holding complaint and matching key
         fetch(url + '&borough=' + borough)
             .then(res => res.json())
